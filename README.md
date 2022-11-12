@@ -78,6 +78,13 @@ CSS 部分，讀取完成的圓形遮罩困擾許久，後來用 CSS 的 clip-pa
 在區塊轉換時會因為 `getLeaderAnimal()` 的改變所以導致動物瞬間移動，這部分如果下次還有需要處理，可能要想想怎麼把它變得更流暢或是用其他方式實現
 
 
+
+
+### 已知問題
+
+* 桌機端的紅綠燈動態、左下角地圖完成動態（有旗子）猜測是因為 GSAP 改 background image 的方式會以圖片位址加上 rgba 調整的方式補幀，開 console 會看到一排 404 QQ ，如果有要處理這類效果可能要改成 ScrollTrigger 直接下 CSS 標籤的方式，應該會能夠解決！
+
+
 ## [DEMO（https://aa367421.github.io/F2E_2022_W1/index.html）](https://aa367421.github.io/F2E_2022_W1/index.html)
 
 
