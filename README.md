@@ -58,7 +58,7 @@ The F2E 2022 第一關的作品，感謝有這個機會讓我能用 GSAP 實作�
 
 ### Loading Page 讀取頁面
 
-主要有關 entryDivertion.js 和 entryDivertion.css
+*主要有關 entryDivertion.js 和 entryDivertion.css*
 
 JS 部分，假讀取用 GSAP 達成，原本監聽讀取完畢的事件是抓 window.onload ，後來發現抓互動元素（\_h、\_p等等）的 preload 完成點會讓使用體驗好上許多，後來決定用這個方式
 
@@ -71,7 +71,7 @@ CSS 部分，讀取完成的圓形遮罩困擾許久，後來用 CSS 的 clip-pa
 
 ### 桌機端的角色動態
 
-主要有關 entryDivertion.js 中約 59 行左右開始的 `device == 'desktop'` 判斷裡的游標移動監聽，也包含了游標圖示更換
+*主要有關 entryDivertion.js 中約 59 行左右開始的 `device == 'desktop'` 判斷裡的游標移動監聽，也包含了游標圖示更換*
 
 角色動態部分，因為隨著區塊不同，動物被套用不同的 scale ，所以用了 `getLeaderAnimal()` 抓三個動物的高度來判斷誰處於領先，在後續的游標監聽中就讓他和其他兩隻動物移動反方向，營造視覺的錯落感。主要實現方式則是取游標的 x 值，對三隻動物做對應的 translateX 移動
 
