@@ -1,8 +1,7 @@
 # The F2E 2022 W1
 
 
-### **UI design from [EG](https://2022.thef2e.com/users/12061549261454740203)**
-### **UI 設計稿來自 [EG](https://2022.thef2e.com/users/12061549261454740203)**
+### **UI design from [EG](https://2022.thef2e.com/users/12061549261454740203)**　　**UI 設計稿來自 [EG](https://2022.thef2e.com/users/12061549261454740203)**
 
 
 ## [DEMO](https://aa367421.github.io/F2E_2022_W1/index.html)（https://aa367421.github.io/F2E_2022_W1/index.html）
@@ -81,8 +80,8 @@ CSS 部分，讀取完成的圓形遮罩困擾許久，後來用 CSS 的 clip-pa
 
 ## [DEMO](https://aa367421.github.io/F2E_2022_W1/index.html)（https://aa367421.github.io/F2E_2022_W1/index.html）
 
-### **UI design from [EG](https://2022.thef2e.com/users/12061549261454740203)**
-### **UI 設計稿來自 [EG](https://2022.thef2e.com/users/12061549261454740203)
+
+### **UI design from [EG](https://2022.thef2e.com/users/12061549261454740203)**　　**UI 設計稿來自 [EG](https://2022.thef2e.com/users/12061549261454740203)**
 
 
 from 2022/11/08 - 2022/11/12
