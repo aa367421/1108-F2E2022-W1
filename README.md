@@ -42,5 +42,14 @@ The F2E 2022 第一關的作品，感謝有這個機會讓我能用 GSAP 實作�
   - allForNotDesktop : 平板、手機等 max-width <= 820px 裝置的 桌機端的 js / sass / css 們
 
 
+## Technology & Library 使用技術
+
+* Normalize CSS
+* SASS
+* GSAP 、 ScrollTrigger
+  - 主要的動態達成
+* jQuery
+  - Scroll to top 的部分
+
 from 2022/11/08 - 2022/11/12
 
