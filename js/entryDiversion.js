@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 let progressAni = gsap.to(('.progress'), {
     width: '75%',
@@ -51,7 +51,7 @@ const importData = (type ,src) => {
     }
 }
 
-importData('font', './resource/font/GenJyuuGothic-P-Normal.ttf')
+importData('font', './resource/font/GenJyuuGothic-P-Normal.ttf');
 
 let windowWidth = document.body.clientWidth;
 getDevice(windowWidth);
