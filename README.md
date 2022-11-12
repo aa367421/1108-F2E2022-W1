@@ -5,6 +5,9 @@
 ### **UI 設計稿來自 [EG](https://2022.thef2e.com/users/12061549261454740203)
 
 
+## [DEMO](https://aa367421.github.io/F2E_2022_W1/index.html)（https://aa367421.github.io/F2E_2022_W1/index.html）
+
+
 ## Work Description 作品說明
 
 
@@ -73,7 +76,13 @@ CSS 部分，讀取完成的圓形遮罩困擾許久，後來用 CSS 的 clip-pa
 
 角色動態部分，因為隨著區塊不同，動物被套用不同的 scale ，所以用了 `getLeaderAnimal()` 抓三個動物的高度來判斷誰處於領先，在後續的游標監聽中就讓他和其他兩隻動物移動反方向，營造視覺的錯落感。主要實現方式則是取游標的 x 值，對三隻動物做對應的 translateX 移動
 
+在區塊轉換時會因為 `getLeaderAnimal()` 的改變所以導致動物瞬間移動，這部分如果下次還有需要處理，可能要想想怎麼把它變得更流暢或是用其他方式實現
 
+
+## [DEMO](https://aa367421.github.io/F2E_2022_W1/index.html)（https://aa367421.github.io/F2E_2022_W1/index.html）
+
+### **UI design from [EG](https://2022.thef2e.com/users/12061549261454740203)**
+### **UI 設計稿來自 [EG](https://2022.thef2e.com/users/12061549261454740203)
 
 
 from 2022/11/08 - 2022/11/12
