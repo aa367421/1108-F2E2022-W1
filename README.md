@@ -1,7 +1,7 @@
 # [The F2E 2022 W1](https://2022.thef2e.com/news/week1)
 
 
-### **[UI design from EG　UI 設計稿來自EG](https://2022.thef2e.com/users/12061549261454740203)**
+### **[UI design from EG　UI 設計稿來自EG　(https://2022.thef2e.com/users/12061549261454740203)](https://2022.thef2e.com/users/12061549261454740203)**
 
 
 ## [DEMO（https://aa367421.github.io/F2E_2022_W1/index.html）](https://aa367421.github.io/F2E_2022_W1/index.html)
@@ -78,10 +78,10 @@ CSS 部分，讀取完成的圓形遮罩困擾許久，後來用 CSS 的 clip-pa
 在區塊轉換時會因為 `getLeaderAnimal()` 的改變所以導致動物瞬間移動，這部分如果下次還有需要處理，可能要想想怎麼把它變得更流暢或是用其他方式實現
 
 
-## [DEMO（https://aa367421.github.io/F2E_2022_W1/index.html）](https://aa367421.github.io/F2E_2022_W1/index.html)（https://aa367421.github.io/F2E_2022_W1/index.html）
+## [DEMO（https://aa367421.github.io/F2E_2022_W1/index.html）](https://aa367421.github.io/F2E_2022_W1/index.html)
 
 
-### **[UI design from EG　UI 設計稿來自EG](https://2022.thef2e.com/users/12061549261454740203)**
+### **[UI design from EG　UI 設計稿來自EG　(https://2022.thef2e.com/users/12061549261454740203)](https://2022.thef2e.com/users/12061549261454740203)**
 
 
 from 2022/11/08 - 2022/11/13
