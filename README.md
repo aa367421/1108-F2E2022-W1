@@ -80,7 +80,7 @@ CSS 部分，讀取完成的圓形遮罩困擾許久，後來用 CSS 的 clip-pa
 在區塊轉換時會因為 `getLeaderAnimal()` 的改變所以導致動物瞬間移動，這部分如果下次還有需要處理，可能要想想怎麼把它變得更流暢或是用其他方式實現
 
 
-以上！如果有問題歡迎發 issue 或是 mail : aa367421@gmail.com ～
+以上！如果有問題、建議、討論都歡迎發 issue 或是 mail : aa367421@gmail.com ～
 see you!
 
 
