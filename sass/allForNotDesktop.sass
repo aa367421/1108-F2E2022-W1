@@ -117,6 +117,7 @@ body
         background-image: url("../resource/logo/logo_text.png")
         +bgSizeAndRepeat(contain)
         background-position: center center
+        +hideText
     .user-icon
         +pos(12px, 8px, auto, auto, fixed)
         display: block
@@ -271,7 +272,7 @@ body
                     color: $highlightColor1
                     font-size: $notDesktopFzXL
                     +mobile
-                        $notDesktopFzML
+                        font-size: $notDesktopFzML
                 .promblem-card-img
                     display: none
                     &.n-desktop
@@ -345,7 +346,7 @@ body
                         color: $primaryColor1
                         font-size: $notDesktopFzXL
                         +mobile
-                            $notDesktopFzML
+                            font-size: $notDesktopFzML
                 &:nth-child(2n)
                     +transform(-50%)
                     .race-card-btn-and-text
@@ -392,7 +393,7 @@ body
                 .stage-card-week
                     color: $highlightColor1
                     +mobile
-                        $notDesktopFzML
+                        font-size: $notDesktopFzML
                         margin-bottom: 4%
                 .stage-card-title
                     color: $primaryColor1
@@ -476,7 +477,7 @@ body
                 color: $highlightColor1
                 margin-bottom: 4%
                 +mobile
-                    $notDesktopFzML
+                    font-size: $notDesktopFzML
             .description-card-time
                 color: $colorWhite
                 background-color: $primaryColor1
@@ -518,7 +519,7 @@ body
                 opacity: 0
                 font-size: 35px
                 +mobile
-                    $notDesktopFzML
+                    font-size: $notDesktopFzML
         .award-title
             width: 100vw
             text-align: center
@@ -677,7 +678,7 @@ body
                 color: $highlightColor1
                 font-size: 35px
                 +mobile
-                    $notDesktopFzML
+                    font-size: $notDesktopFzML
 
 *[data-ani = title]
     opacity: 0

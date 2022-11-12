@@ -71,7 +71,11 @@ body {
 @media (max-width: 820px) {
   .loading-page .progress-bar {
     width: 50vw;
-    height: 2vh;
+  }
+}
+@media (max-width: 414px) {
+  .loading-page .progress-bar {
+    width: 75vw;
   }
 }
 .loading-page .progress-bar .loading-img {
@@ -280,6 +284,9 @@ body .container > nav, body .container > div, body .container > a {
   background-position: unset;
   background-repeat: no-repeat;
   opacity: 0;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .user-icon {

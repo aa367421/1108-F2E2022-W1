@@ -145,6 +145,9 @@ body .container > nav, body .container > div, body .container > a {
   background-position: unset;
   background-repeat: no-repeat;
   background-position: center center;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .top-bar .user-icon {
   position: fixed;
@@ -1070,7 +1073,6 @@ body .container > nav, body .container > div, body .container > a {
   transform: translate(-50%, 0%) scale(100%) rotate(0deg);
 }
 .footer-section .footer-main .footer-join .finish-join-text {
-  font-size: 28px;
   color: #FF5136;
   font-size: 35px;
 }
