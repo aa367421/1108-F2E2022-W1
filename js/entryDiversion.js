@@ -22,12 +22,13 @@ const getDevice = (windowWidth) => {
     importData('script','./js/allForNotDesktop.js');
 }
 
+
 const importData = (type ,src) => {
-    let el = document.createElement(type);
+    let el = document.createElement(type != 'img' ? type : 'link');
     el.crossorigin = 'anonymous'
     if (type == 'link'){
-        el.rel = 'stylesheet';
         el.as = 'style';
+        el.rel = 'stylesheet';
         el.href = src;
         document.head.appendChild(el);
     } else if (type == 'script'){
@@ -35,10 +36,22 @@ const importData = (type ,src) => {
         el.src = src;
         el.defer = true;
         document.body.appendChild(el);
+    } else if (type == 'img') {
+        el.as = 'image';
+        el.rel = 'preload';
+        el.href = src;
+        document.querySelector('.forPreload').appendChild(el);
+    } else if (type == 'font'){
+        el.as = 'font';
+        el.rel = 'preload';
+        el.href = src;
+        document.querySelector('.forPreload').appendChild(el);
     } else {
         return console.log('type error!');
     }
 }
+
+importData('font', './resource/font/GenJyuuGothic-P-Normal.ttf')
 
 let windowWidth = document.body.clientWidth;
 getDevice(windowWidth);
@@ -96,7 +109,7 @@ if (device == 'desktop'){
         } else {
             return
         }
-}
+    }
 
     document.body.addEventListener('mousemove', (e) => {
         forEvent = e;
@@ -104,11 +117,83 @@ if (device == 'desktop'){
     })
 }
 
+let isInteractImgPreloaded = false;
+let interactImgPreloadedNum = 0;
+const preloadImgAryInEnter = [
+    './resource/btn/btn_burger_close.png',
+    './resource/btn/btn_burger_open_h.png',
+    './resource/btn/btn_burger_open_p.png',
+    './resource/btn/btn_burger_close_h.png',
+    './resource/btn/btn_burger_close_p.png',
+    './resource/btn/btn_user_h.png',
+    './resource/btn/btn_user_p.png',
+    './resource/btn/btn_join_h.png',
+    './resource/btn/btn_sponsor_h.png', // for interact
+    './resource/btn/btn_joinHand.gif',
+    './resource/character/character_f2e.gif',
+    './resource/character/character_ui.gif',
+    './resource/character/character_team.gif',
+    './resource/main/map.svg',
+    './resource/main/map_now.gif', // for cover section
+]
+
+preloadImgAryInEnter.forEach(element => {
+    importData('img', element);
+    document.querySelector(`link[href='${element}']`).addEventListener('load', () => {
+        interactImgPreloadedNum += 1;
+        if (interactImgPreloadedNum > 8 && isInteractImgPreloaded == false){
+            isInteractImgPreloaded = true;
+            progressAni.pause();
+            let timeLineProgressDone = gsap.timeline();
+            timeLineProgressDone.to(('.progress'), {
+                width: '100%',
+                duration: 1
+            }).to('.loading-page', {
+                opacity: '0',
+                duration: 0.5
+            }).to('.loading-page', {
+                display: 'none'
+            }).to('.container.loading', {
+                opacity: '1',
+                clipPath: 'circle(100%)',
+                duration: 1
+            },'<')
+            setTimeout(() => {
+                container.style.clipPath = '';
+                container.classList.remove('loading');
+                if (device == 'desktop'){
+                    gsap.fromTo(sideBar, {
+                        opacity: '0'
+                    },{
+                        opacity: '1',
+                        duration: 0.3
+                    })
+                }
+            }, 3000)
+
+            $('.logo, .top-logo').click(() => {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 1000);
+            });
+        }
+    })
+})
+
 const sideBarOpenBtn = document.querySelector('.side-bar-btn');
 const sideBarContent = document.querySelector('.side-bar-content');
+const preloadSiderBarIconAry = [
+    './resource/ic/ic_menu_info_h.png',
+    './resource/ic/ic_menu_list_h.png',
+    './resource/ic/ic_menu_strategy_h.png',
+    './resource/ic/ic_menu_job_h.png'
+]
 
 sideBarOpenBtn.addEventListener('click', () => {
     sideBarOpenBtn.classList.toggle('active');
+    preloadSiderBarIconAry.forEach(element => {
+        importData('img', element);
+    })
     if (sideBarOpenBtn.classList.contains('active') == true){
         gsap.to(sideBarContent, {
             marginLeft: '0'
@@ -137,6 +222,7 @@ sideBarOpenBtn.addEventListener('click', () => {
 })
 
 const container = document.querySelector('.container');
+const sideBar = document.querySelector('.side-nav.loading');
 
 if (scrollY != 0){
     container.classList.remove('loading');
@@ -145,33 +231,3 @@ if (scrollY != 0){
         container.classList.remove('loading');
     });
 }
-
-$(window).ready(() => {
-    progressAni.pause();
-    let timeLineProgressDone = gsap.timeline();
-    timeLineProgressDone.to(('.progress'), {
-        width: '100%',
-        duration: 1
-    }).to('.loading-page', {
-        opacity: '0',
-        duration: 0.5
-    }).to('.loading-page', {
-        display: 'none'
-    }).to('.container.loading', {
-        opacity: '1',
-        clipPath: 'circle(100%)',
-        duration: 1
-    },'<')
-    setTimeout(() => {
-        container.style.clipPath = '';
-        container.classList.remove('loading');
-    }, 3000)
-})
-
-$(document).ready(() => {
-    $('.logo, .top-logo').click(() => {
-        $('html,body').animate({
-            scrollTop: 0
-        }, 1000);
-    });
-})

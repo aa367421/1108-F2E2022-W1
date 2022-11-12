@@ -63,6 +63,9 @@ body .container > nav, body .container > div, body .container > a {
   color: #FFC37D;
   font-size: 18px;
 }
+.side-nav .side-bar-content .side-bar-icon:active .side-bar-text {
+  color: #FFE2A9;
+}
 .side-nav .side-bar-content .info-btn div {
   background-image: url("../resource/ic/ic_menu_info.png");
 }
@@ -94,7 +97,7 @@ body .container > nav, body .container > div, body .container > a {
   align-items: center;
 }
 .side-nav .side-bar-outline .side-bar {
-  left: 0;
+  left: -2px;
   width: 20px;
   height: 100vh;
 }
@@ -291,7 +294,7 @@ body .container > nav, body .container > div, body .container > a {
 }
 @media (max-width: 414px) {
   .cover-section .cover-main {
-    transform: translate(0, calc(60px + 5%)) scale(100%) rotate(0deg);
+    transform: translate(0, 60px) scale(100%) rotate(0deg);
   }
 }
 .cover-section .cover-main .cover-logo {

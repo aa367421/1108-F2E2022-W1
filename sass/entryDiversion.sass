@@ -13,7 +13,7 @@
     font-display: block
 
 *
-    font-family: 'Gen Jyuu Gothic P'
+    font-family: 'Gen Jyuu Gothic P' !important
     font-style: normal
     font-weight: 700
     line-height: 125%
@@ -44,20 +44,24 @@ body
 .loading-page
     +flex
     +pos(0)
-    z-index: 9 !important
+    position: fixed !important
+    z-index: 99 !important
     width: 100vw
-    height: 100vh
+    padding: 0px
+    height: 100vh !important
     background-color: $secondaryColor1
+    +hideText
     .progress-bar
         position: relative
         width: 25vw
         height: 2vh
         border: 2px solid $primaryColor1
         border-radius: 20px
+        box-sizing: border-box
         @media (max-width: 820px)
             width: 50vw
         @media (max-width: 414px)
-           width: 75vw
+            width: 75vw
         .loading-img
             +pos(-2px, auto, auto, 50%, absolute)
             +transform(-50%, -100%)
@@ -75,6 +79,11 @@ body
     opacity: 0
     clip-path: circle(0%)
 
+@media (min-width: 821px)
+    .logo, .side-nav
+        &.loading
+            opacity: 0
+
 .cursor-el
     +pos
     width: 25px
@@ -83,3 +92,8 @@ body
     +bgSizeAndRepeat(cover)
     pointer-events: none
     z-index: 10
+
+.forPreload
+    width: 0px
+    height: 0px
+    display: none
