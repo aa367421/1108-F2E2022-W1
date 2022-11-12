@@ -1,0 +1,664 @@
+@import 'checkDevice'
+@import 'mixin'
+
+a
+    text-decoration: none
+ul
+    list-style: none
+    padding: 0
+h1
+    font-style: 32px
+h2
+    font-size: 60px
+h3
+    font-size: 44px
+h4
+    font-size: 32px
+h5
+    font-size: 24px
+body
+    section
+        width: 100vw
+        height: 250vh
+        visibility: hidden
+    .container > nav, .container > div, .container > a
+        z-index: 2
+
+.n-desktop
+    display: none !important
+
+.side-nav
+    +flex(flex-start, center)
+    +pos
+    height: 100vh
+    z-index: 9 !important
+    .side-bar-content
+        +flex(flex-start)
+        flex-direction: column
+        width: 10vw
+        height: 100vh
+        background-color: $primaryColor1
+        padding-top: 10vh
+        margin-left: -10vw
+        .side-bar-icon
+            +flex
+            flex-direction: column
+            margin-bottom: 4vh
+            div
+                width: 4vw
+                height: 4vw
+                +bgSizeAndRepeat
+            .side-bar-text
+                color: $secondaryColor1
+                font-size: $bodyFontSize
+            &:hover
+                .side-bar-text
+                    color: $secondaryColor3
+        .info-btn
+            div
+                background-image: url("../resource/ic/ic_menu_info.png")
+            &:hover
+                div
+                    background-image: url("../resource/ic/ic_menu_info_h.png")
+        .list-btn
+            div
+                background-image: url("../resource/ic/ic_menu_list.png")
+            &:hover
+                div
+                    background-image: url("../resource/ic/ic_menu_list_h.png")
+        .strategy-btn
+            div
+                background-image: url("../resource/ic/ic_menu_strategy.png")
+            &:hover
+                div
+                    background-image: url("../resource/ic/ic_menu_strategy_h.png")
+        .job-btn
+            div
+                background-image: url("../resource/ic/ic_menu_job.png")
+            &:hover
+                div
+                    background-image: url("../resource/ic/ic_menu_job_h.png")
+    .side-bar-outline
+        position: relative
+        +flex
+        .side-bar
+            left: 0
+            width: 20px
+            height: 100vh
+        .side-bar-btn
+            position: absolute
+            left: 18px
+            width: 60px
+            height: 66.66px
+            background-image: url("../resource/btn/btn_burger_open.png")
+            +bgSizeAndRepeat(cover)
+            transition: 0.1s
+            &:hover
+                background-image: url("../resource/btn/btn_burger_open_h.png")
+            &:active
+                background-image: url("../resource/btn/btn_burger_open_p.png")
+            &.active
+                background-image: url("../resource/btn/btn_burger_close.png")
+                &:hover
+                    background-image: url("../resource/btn/btn_burger_close_h.png")
+                &:active
+                    background-image: url("../resource/btn/btn_burger_close_p.png")
+
+.logo
+    z-index: 9 !important
+    visibility: hidden
+    +pos(30px, auto, auto, 40px)
+    width: 10vw
+    height: 13vh
+    background-image: url("../resource/logo/logo.png")
+    +bgSizeAndRepeat(contain)
+    opacity: 0
+
+.user-icon
+    +pos(30px, 20px, 120%)
+    width: 80px
+    height: 80px
+    background-image: url("../resource/btn/btn_user.png")
+    +bgSizeAndRepeat(cover)
+    transition: 0.1s
+    &:hover
+        background-image: url("../resource/btn/btn_user_h.png")
+    &:active
+        background-image: url("../resource/btn/btn_user_p.png")
+
+.traffic-light
+    +pos(50%, 0)
+    +flex
+    flex-direction: column
+    +transform(0%, -50%)
+    .traffic-light-text
+        position: relative
+        text-align: center
+        line-height: 140%
+        color: $highlightColor1
+        padding-left: 20%
+        margin-bottom: 15%
+        h1
+            position: absolute
+            +transform(-50%, -50%)
+        .go-text
+            opacity: 0
+    .traffic-light-img
+        position: relative
+        width: 15vw
+        height: 10vh
+        background-image: url("../resource/main/traffic_light_all.png")
+        +bgSizeAndRepeat(contain, right)
+
+.join-btn
+    +flex
+    flex-direction: column
+    +pos(auto, 20px, 20px, auto)
+    .join-text
+        line-height: 140%
+        letter-spacing: 0.05em
+        color: $primaryColor1
+    .join-hand
+        width: 57px
+        height: 71px
+        margin-bottom: 4px
+    .join-btn-img
+        width: 103px
+        height: 60px
+        background-image: url("../resource/btn/btn_join.png")
+        +bgSizeAndRepeat(cover)
+        transition: 0.1s
+        &:hover
+            background-image: url("../resource/btn/btn_join_h.png")
+
+.map
+    +pos(auto, auto, 35px, 50px)
+    width: 225px
+    height: 140px
+    background-image: url("../resource/main/map.svg")
+    +bgSizeAndRepeat(cover)
+    .map-now
+        +pos(60px, auto, auto, 15px, absolute)
+        width: 30px
+        height: 30px
+        +transform(-50%, -50%)
+        background-image: url("../resource/main/map_now.gif")
+
+.running
+    +flex
+    flex-direction: column
+    +pos(auto, auto, 0, 50%)
+    transform-origin: center bottom
+    +transform(-50%)
+    pointer-events: none
+    z-index: 1 !important
+    .running-animals
+        +flex(space-around, flex-end)
+        +pos(auto, auto, 0, auto)
+        width: 50vw
+        z-index: 2
+        [class^=running]
+            width: 15vw
+            height: 45vh
+        .running-cat
+            height: 50vh
+    .running-road
+        width: 55vw
+        z-index: 1
+    
+
+.cover-section
+    +flex
+    flex-direction: column
+    width: 75vw
+    margin: 0 auto
+    visibility: visible
+    .bg-decoration
+        +flex(space-between)
+        +pos(30%)
+        width: 90vw
+        z-index: -1
+        img
+            width: 30%
+    .cover-main
+        +flex
+        +pos(0)
+        width: 75%
+        height: 100%
+        background-image: url("../resource/main/start.png")
+        +bgSizeAndRepeat(cover)
+        .cover-logo
+            +flex(center, flex-end)
+            +pos(4%, auto, auto, auto, absolute)
+            width: 50%
+            height: 30%
+            background-image: url("../resource/logo/logo_text.png")
+            +bgSizeAndRepeat(contain)
+            .cover-logo-title
+                width: 45%
+                padding: 8px 40px
+                margin: 0 0 -30px 0
+                text-align: center
+                color: $colorWhite
+                background-color: $highlightColor1
+                border-radius: 100px
+        .cover-join-type-card-list
+            +flex(space-between)
+            +pos(calc( 34% + 30px + 2% ), auto, auto, auto, absolute)
+            width: 50%
+            .join-type-card
+                +flex
+                flex-direction: column
+                +transform(0%, 0%, 80%)
+                .join-type           
+                    color: $primaryColor1
+                .join-number
+                    +flex
+                    color: $colorWhite
+                    background-color: $primaryColor1
+                    padding: 4px 28px
+                    border-radius: 40px
+                    img
+                        width: 24px
+                        height: 24px
+                        margin-right: 15px
+                        // filter from https://codepen.io/sosuke/pen/Pjoqqp
+                        filter: invert(100%) sepia(0%) saturate(7459%) hue-rotate(96deg) brightness(108%) contrast(110%)
+            
+.problem-section
+    +flex
+    opacity: 0
+    .bg-decoration
+        +flex(space-between)
+        +pos(auto, auto, -50px, 50%)
+        width: 50vw
+        +transform(-50%, 0%, 120%)
+        img
+            width: 10vw
+        img:first-child
+            transform: scaleX(-1)
+    .problem-main
+        +flex
+        flex-direction: column
+        +pos(2%)
+        .problem-main-title
+            +titleWithTalkingBg
+            background-image: url("../resource/bg/bg_talking.png")
+            +bgSizeAndRepeat
+        .problem-card-list
+            +flex(space-around)
+            width: 80vw
+            .problem-card
+                +flex
+                flex-direction: column
+                opacity: 0
+                .problem-card-text
+                    color: $highlightColor1
+                .promblem-card-img
+                    width: 20vw
+                &:first-child
+                    +transform(-20%)
+                &:last-child
+                    +transform(20%)
+
+.race-title-section
+    .race-title-main
+        +flex
+        flex-direction: column
+        +pos(0, auto, auto, 50%)
+        +transform(-50%)
+        opacity: 0
+        .race-title
+            margin-top: 2%
+            +titleWithTalkingBg
+            background-image: url("../resource/bg/bg_talking.png")
+            +bgSizeAndRepeat
+        .race-small-title
+            color: $secondaryColor2
+        .race-card-list
+            +flex(space-around)
+            width: 70vw
+            .race-card
+                +flex
+                flex-direction: column
+                width: 20vw
+                opacity: 0
+                .race-card-btn
+                    position: relative
+                    width: 5vw
+                    padding-top: 40%
+                    margin-bottom: 7%
+                    text-align: center
+                    background-image: url(../resource/btn/btn_join.png)
+                    +bgSizeAndRepeat(contain, bottom)
+                    &:hover
+                        background-image: url("../resource/btn/btn_join_h.png")
+                        .race-card-btn-hand
+                            opacity: 1
+                    .race-card-btn-hand
+                        +pos(15%, auto, auto, 60%, absolute)
+                        width: 60%
+                        +transform(-50%)
+                        opacity: 0
+                        transition: 0.2s
+                .race-card-text
+                    color: $primaryColor1
+
+.stage-section
+    .stage-title-main
+        +flex
+        flex-direction: column
+        +pos(0, auto, auto, 50%)
+        width: 100vw
+        +transform(-50%)
+        text-align: center
+        opacity: 0
+        .stage-title
+            margin-top: 2%
+            +titleWithTalkingBg
+            background-image: url("../resource/bg/bg_talking.png")
+            +bgSizeAndRepeat
+        .stage-small-title
+            color: $secondaryColor2
+            line-height: 140%
+    .stage-card-list
+        +flex
+        flex-direction: column
+        +transform(0%, 200%)
+        .stage-card
+            +flex(center, flex-start)
+            width: 75vw
+            opacity: 0
+            .stage-card-text
+                +flex(center, flex-start)
+                flex-direction: column
+                .stage-card-week
+                    color: $highlightColor1
+                .stage-card-title
+                    color: $primaryColor1
+                    margin-bottom: 2%
+                .stage-card-tag-group
+                    +flex(flex-start)
+                    width: 50vw
+                    margin-bottom: 2%
+                    .stage-card-tag
+                        color: $secondaryColor2
+                        line-height: 140%
+                        padding: 4px 24px
+                        border: 2px solid $secondaryColor2
+                        border-radius: 60px
+                        &:first-child
+                            margin-right: 2%
+                .stage-card-btn
+                    font-size: $bodyFontSize
+                    color: $colorWhite
+                    background-color: $secondaryColor2
+                    line-height: 160%
+                    padding: 4px 24px
+                    border-radius: 60px
+                    &:hover
+                        background-color: $highlightColor1
+            &:nth-child(2n+1)
+                .stage-card-text
+                    order: 1
+                img[class^=week]
+                    order: 0
+                    margin-right: 2%
+            &:nth-child(2)
+                .stage-card-text
+                    +flex(center, flex-end)
+                    margin-right: 2%
+                    .stage-card-tag-group
+                        +flex(flex-end)
+            &:nth-child(3)
+                img[class^=week]
+                    margin-right: 0
+            img[class^=week]
+                width: 15vw
+
+.description-section
+    .description-main
+        +pos(2%, auto, auto, 50%)
+        width: 75vw
+        height: 100vh
+        +transform(-60%)
+        background-image: url("../resource/main/date_line.png")
+        +bgSizeAndRepeat(contain, center 60%)
+        opacity: 0
+        ul li
+            +transform(-10%)
+            opacity: 0
+        .description-card-img-list
+            +flex(space-around, flex-end)
+            margin: 0
+            .description-card-img
+                width: 8vw 
+            .description-card-btn
+                display: block
+                position: relative
+                width: 5vw
+                padding-top: 40%
+                margin-bottom: 7%
+                text-align: center
+                background-image: url(../resource/btn/btn_join.png)
+                +bgSizeAndRepeat(contain, bottom)
+                &:hover
+                    background-image: url(../resource/btn/btn_join_h.png)
+                .description-card-btn-hand
+                    position: absolute
+                    left: 50%
+                    bottom: 100%
+                    width: 60%
+                    +transform(-50%)
+        .description-card-list
+            +flex(space-around, flex-start)
+            margin: 0
+            .description-card
+                +flex
+                flex-direction: column  
+                .description-card-title
+                    color: $highlightColor1
+                    margin-bottom: 2%
+                .description-card-time
+                    color: $colorWhite
+                    background-color: $primaryColor1
+                    padding: 8px 28px
+                    border-radius: 50px
+                    margin-bottom: 2%
+                .description-card-text
+                    color: $secondaryColor2
+                    text-align: center
+                    margin-bottom: 2%
+                .description-card-text-small
+                    font-size: $bodyFontSize
+                    color: $highlightColor1
+                        
+.award-section
+    height: 350vh
+    .bg-decoration
+        +flex(space-between)
+        +pos(30%, auto, auto, 50%)
+        width: 140vw
+        +transform(-50%)
+        opacity: 0
+        img
+            width: 20%
+    .award-main
+        +pos(0, auto, auto, 50%)
+        width: 100vw
+        +transform(-50%)
+        text-align: center
+        .award-slogan
+            +pos(30%, auto, auto, 50%)
+            width: 100vw
+            +transform(-50%, 0%, 300%)
+            color: $highlightColor1
+            opacity: 0
+        .award-title
+            display: inline-block
+            margin-top: 2%
+            +titleWithTalkingBg
+            background-image: url("../resource/bg/bg_talking.png")
+            +bgSizeAndRepeat
+            opacity: 0
+        .award-description
+            +flex
+            +transform(-5%)
+            opacity: 0
+            .award-img
+                position: relative
+                margin-right: 2%
+                img
+                    width: 15vw
+                .award-trophy
+                    position: absolute
+                    left: -7.5vw
+                    transform-origin: center
+                    +transform(50%)
+                .award-light
+                    transform-origin: center center
+                    animation: rotationLight 5s linear infinite
+                    @keyframes rotationLight 
+                        0%
+                            transform: rotate(0deg)
+                        100%
+                            transform: rotate(360deg)
+                    
+            .award-text
+                text-align: left
+                .award-text-title
+                    color: $highlightColor1
+                    line-height: 140%
+                    margin-bottom: 2%
+                .award-text-content
+                    font-size: $bodyFontSize
+                    color: $primaryColor1
+                    line-height: 160%
+                    margin-bottom: 2%
+                    .award-text-highlight
+                        font-size: 24px
+                        color: $highlightColor1
+
+.sponsor-section
+    +flex(center, flex-end)
+    .bg-decoration
+        +flex(space-around)
+        +pos(0, auto, auto, 50%)
+        bottom: 0
+        width: 120vw
+        +transform(-50%, 20%)
+        opacity: 0
+        img
+            width: 20%
+    .sponsor-main
+        .sponsor-title
+            +pos(0, auto, auto, 50%)
+            +transform(-50%)
+            text-align: center
+            display: inline-block
+            margin: 2% 0
+            +titleWithTalkingBg
+            background-image: url("../resource/bg/bg_talking.png")
+            +bgSizeAndRepeat
+            opacity: 0
+        .sponsor-card-list
+            +flex(space-around)
+            +pos(25%, auto, auto, 50%)
+            +transform(-50%)
+            width: 60vw
+            .sponsor-card
+                +flex
+                flex-direction: column
+                opacity: 0
+                +transform(0%, 10%)
+                visibility: hidden
+                .sponsor-card-img
+                    position: relative
+                    width: 15vw
+                    height: 15vw
+                    background-image: url("../resource/btn/btn_sponsor.png")
+                    +bgSizeAndRepeat
+                    margin-bottom: 2%
+                    img
+                        +pos(50%, auto, auto, 50%, absolute)
+                        width: 12vw
+                        +transform(-50%, -50%)
+                        transition: 0.1s
+                    &:hover
+                        background-image: url("../resource/btn/btn_sponsor_h.png")
+                        img
+                            +transform(calc( -50% + 2px), calc( -50% + 2px))
+                .sponsor-card-tag
+                    text-align: center
+                    color: $secondaryColor2
+                    line-height: 140%
+                    padding: 4px 24px
+                    border: 2px solid $secondaryColor2
+                    border-radius: 60px
+
+.footer-section
+    .bg-decoration
+        +flex(space-around)
+        +pos(30%, auto, auto, 50%)
+        width: 150vw
+        +transform(-50%)
+        opacity: 0
+        img
+            width: 30%
+    .goal
+        +pos(0, auto, auto, 50%)
+        width: 70vw
+        +transform(-50%, -10%, 150%)
+        opacity: 0
+    .footer-main
+        +flex
+        flex-direction: column
+        +pos(0, auto, auto, 50%)
+        width: 100vw
+        height: 100vh
+        +transform(-50%, 0%, 150%)
+        opacity: 0
+        z-index: 1
+        .finish-lane
+            +flex
+            +pos(60%, auto, auto, 50%)
+            width: 100vw
+            +transform(-50%)
+            img
+                width: 60vw
+            .finish-line-l
+                transform-origin: left center
+                +transform(5%)
+            .finish-line-r
+                transform-origin: right center
+                +transform(-5%)
+                
+        .footer-join
+            +flex
+            flex-direction: column
+            +pos(10%, auto, auto, 50%)
+            width: 100vw
+            +transform(-50%, 20%)
+            opacity: 0
+            .footer-logo
+                width: 20vw
+                padding-top: 2%
+                margin-bottom: 3%
+            .footer-card-btn
+                position: relative
+                width: 5vw
+                height: 5vh
+                text-align: center
+                margin-bottom: 1%
+                background-image: url(../resource/btn/btn_join.png)
+                +bgSizeAndRepeat(contain, bottom)
+                &:hover
+                    background-image: url(../resource/btn/btn_join_h.png)
+                .footer-card-btn-hand
+                    position: absolute
+                    width: 60%
+                    left: 50%
+                    bottom: 100%
+                    +transform(-50%)
+            .finish-join-text
+                color: $highlightColor1

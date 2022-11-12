@@ -1,0 +1,23 @@
+=flex($j: center, $a: center)
+    display: flex
+    justify-content: $j
+    align-items: $a
+
+=bgSizeAndRepeat($s: 100% 100%, $p: unset, $r: no-repeat)
+    background-size: $s
+    background-position: $p
+    background-repeat: $r
+
+=transform($x: 0%, $y: 0%, $s: 100%, $r: 0deg)
+    transform: translate($x, $y) scale($s) rotate($r)
+
+=pos($t: auto, $r: auto, $b: auto, $l: auto, $p: fixed)
+    position: $p
+    top: $t
+    left: $l
+    right: $r
+    bottom: $b
+
+=titleWithTalkingBg
+    padding: 1.5% 3% 3% 3%
+    color: $primaryColor1

@@ -1,0 +1,692 @@
+@import 'variables'
+@import 'mixin'
+
+=pos($t: auto, $r: auto, $b: auto, $l: auto, $p: absolute)
+    position: $p
+    top: $t
+    left: $l
+    right: $r
+    bottom: $b
+
+=mobile
+    @media (max-width: 414px)
+        @content
+
+*
+    box-sizing: border-box
+
+
+body
+    width: 100vw
+    section
+        width: 100vw
+        overflow-x: hidden
+    .container > nav, .container > div, .container > a
+        z-index: 2
+
+.container
+    .logo, .user-icon, .traffic-light, .join-btn, .map, .bottom-section
+        display: none
+
+.side-nav
+    +flex(flex-start, center)
+    position: fixed
+    height: 100vh
+    z-index: 3 !important
+    .side-nav-mask
+        position: fixed
+        width: 100vw
+        height: 100vh
+        background-color: $secondaryColor1
+        opacity: 0
+        visibility: hidden
+    .side-bar-content
+        +flex(flex-start)
+        flex-direction: column
+        width: 135px
+        height: 100vh
+        background-color: $primaryColor1
+        padding-top: 10vh
+        margin-left: -155px
+        z-index: 3
+        .side-bar-icon
+            +flex
+            flex-direction: column
+            margin-bottom: 4vh
+            div
+                width: 8vw
+                height: 8vw
+                +bgSizeAndRepeat
+            .side-bar-text
+                color: $secondaryColor1
+                font-size: $bodyFontSize
+        .info-btn
+            div
+                background-image: url("../resource/ic/ic_menu_info.png")
+                &:active
+                    background-image: url("../resource/ic/ic_menu_info_h.png")
+        .list-btn
+            div
+                background-image: url("../resource/ic/ic_menu_list.png")
+                &:active
+                    background-image: url("../resource/ic/ic_menu_list_h.png")
+        .strategy-btn
+            div
+                background-image: url("../resource/ic/ic_menu_strategy.png")
+                &:active
+                    background-image: url("../resource/ic/ic_menu_strategy_h.png")
+        .job-btn
+            div
+                background-image: url("../resource/ic/ic_menu_job.png")
+                &:active
+                    background-image: url("../resource/ic/ic_menu_job_h.png")
+    .side-bar-outline
+        position: relative
+        +flex
+        .side-bar
+            left: 0
+            width: 20px
+            height: 100vh
+        .side-bar-btn
+            position: absolute
+            top: 12px
+            left: 18px
+            width: 40px
+            height: 44.44px
+            background-image: url("../resource/btn/btn_burger_open.png")
+            +bgSizeAndRepeat(cover)
+            transition: 0.1s
+            &:active
+                background-image: url("../resource/btn/btn_burger_open_p.png")
+            &.active
+                background-image: url("../resource/btn/btn_burger_close.png")
+                &:active
+                    background-image: url("../resource/btn/btn_burger_close_p.png")
+
+.top-bar
+    +pos(0, auto, auto, auto, fixed)
+    width: 100vw
+    height: 60px
+    background-color: $secondaryColor1
+    .top-logo
+        +pos(0%, auto, auto, 50%, fixed)
+        transform-origin: center center
+        +transform(-50%)
+        width: 375px
+        height: 60px
+        background-image: url("../resource/logo/logo_text.png")
+        +bgSizeAndRepeat(contain)
+        background-position: center center
+    .user-icon
+        +pos(12px, 8px, auto, auto, fixed)
+        display: block
+        width: 40px
+        height: 40px
+        background-image: url("../resource/btn/btn_user.png")
+        +bgSizeAndRepeat(cover)
+        transition: 0.1s
+        &:active
+            background-image: url("../resource/btn/btn_user_p.png")
+
+.running
+    +pos(auto, auto, 0, 50%, fixed)
+    transform-origin: center, bottom
+    +transform(-50%)
+    +flex
+    flex-direction: column
+    width: 100vw
+    pointer-events: none
+    .running-animals
+        +flex(space-around, flex-end)
+        +pos(auto, auto, 10%, auto)
+        width: 70vw
+        z-index: 2
+        img[class^=running]
+            width: 25vw
+    .running-road
+        width: 80vw
+        +mobile
+            width: 95vw
+
+.cover-section
+    position: relative
+    height: 100vh
+    .bg-decoration
+        +flex(space-between)
+        +pos(40%, auto, auto, 50%)
+        +transform(-50%)
+        width: 120vw
+        z-index: -1
+        img
+            width: 40%
+        +mobile
+            +pos(50%, auto, auto, 50%)
+    .cover-traffic-light
+        +pos(55%, 0)
+        +flex
+        flex-direction: column
+        +mobile
+            +pos(60%, 0)
+        .traffic-light-text
+            position: relative
+            text-align: center
+            line-height: 140%
+            color: $highlightColor1
+            h1
+                position: absolute
+                +transform(-50%, -50%)
+                +mobile
+                    font-size: 14px
+                    +transform(-50%, 25%)
+        .traffic-light-img
+            position: relative
+            width: 24vw
+            height: 16vh
+            background-image: url("../resource/main/traffic_light_all.png")
+            +bgSizeAndRepeat(contain, right)
+    .cover-main
+        +flex
+        flex-direction: column
+        width: 100vw
+        +transform(0, calc(60px + 7%))
+        +mobile
+            +transform(0, calc(60px + 5%))
+        .cover-logo
+            +flex
+            flex-direction: column
+            .cover-logo-img
+                width: 50vw
+                +mobile
+                    width: 66.666vw
+            .cover-logo-title
+                font-size: $notDesktopFzMS
+                padding: 8px 40px
+                text-align: center
+                color: $colorWhite
+                background-color: $highlightColor1
+                border-radius: 100px
+        .cover-join-type-card-list
+            +flex(space-around)
+            flex-direction: column
+            width: 50%
+            height: 25vh
+            .join-type-card
+                +flex
+                flex-direction: column
+                .join-type           
+                    color: $primaryColor1
+                    +mobile
+                        font-size: $notDesktopFzMS
+                .join-number
+                    font-size: $bodyFontSize
+                    +flex
+                    color: $colorWhite
+                    background-color: $primaryColor1
+                    padding: 4px 28px
+                    border-radius: 40px
+                    img
+                        width: 24px
+                        height: 24px
+                        margin-right: 15px
+                        // filter from https://codepen.io/sosuke/pen/Pjoqqp
+                        filter: invert(100%) sepia(0%) saturate(7459%) hue-rotate(96deg) brightness(108%) contrast(110%)
+
+.problem-section
+    +flex
+    .bg-decoration
+        +flex(space-between)
+        +pos(auto, auto, -50px, 50%)
+        width: 50vw
+        +transform(-50%, 0%, 120%)
+        display: none
+        img
+            width: 10vw
+        img:first-child
+            transform: scaleX(-1)
+    .problem-main
+        +flex
+        flex-direction: column
+        margin-top: 2%
+        .problem-main-title
+            width: 100vw
+            text-align: center
+            +titleWithTalkingBg
+            background-image: url("../resource/bg/bg_talking_c.png")
+            +bgSizeAndRepeat
+            margin-bottom: 10%
+            opacity: 0
+            font-size: $notDesktopFzL
+            +mobile
+                font-size: $notDesktopFzM
+        .problem-card-list
+            +flex(space-around)
+            flex-direction: column
+            .problem-card
+                +flex
+                width: 100vw
+                flex-direction: column
+                margin-bottom: 4%
+                opacity: 0
+                .problem-card-text
+                    color: $highlightColor1
+                    font-size: $notDesktopFzXL
+                    +mobile
+                        $notDesktopFzML
+                .promblem-card-img
+                    display: none
+                    &.n-desktop
+                        display: block
+                        width: 55vw
+                        +mobile
+                            width: 70vw
+                &:first-child
+                    +transform(-50%)
+                &:last-child
+                    +transform(50%)
+                    
+.race-title-section
+    .race-title-main
+        +flex
+        flex-direction: column
+        .race-title
+            width: 100vw
+            text-align: center
+            font-size: $notDesktopFzL
+            +titleWithTalkingBg
+            background-image: url("../resource/bg/bg_talking_c.png")
+            +bgSizeAndRepeat
+            margin-bottom: 2%
+            +mobile
+                font-size: $notDesktopFzM
+        .race-small-title
+            color: $secondaryColor2
+            margin-bottom: 4%
+            font-size: $notDesktopFzL
+            +mobile
+                font-size: $notDesktopFzMS
+        .race-card-list
+            display: none
+        .race-card-list.n-desktop
+            +flex(space-around)
+            flex-direction: column
+            .race-card
+                +flex
+                width: 100vw
+                margin-bottom: 6%
+                +transform(50%)
+                opacity: 0
+                img[class^=race-card-character]
+                    width: 35vw
+                &.active
+                    .race-card-btn-and-text > .race-card-btn > .race-card-btn-hand
+                        opacity: 1
+                .race-card-btn-and-text
+                    +flex
+                    flex-direction: column
+                    width: 40vw
+                    .race-card-btn
+                        position: relative
+                        width: 15vw
+                        padding-top: 40%
+                        margin-bottom: 7%
+                        text-align: center
+                        background-image: url(../resource/btn/btn_join.png)
+                        +bgSizeAndRepeat(contain, bottom)
+                        &:active
+                            background-image: url(../resource/btn/btn_join_h.png)
+                        .race-card-btn-hand
+                            +pos(10%, auto, auto, 50%, absolute)
+                            width: 40%
+                            +transform(-50%, -50%)
+                            opacity: 0
+                            transition: 1s
+                    .race-card-text
+                        text-align: center
+                        color: $primaryColor1
+                        font-size: $notDesktopFzXL
+                        +mobile
+                            $notDesktopFzML
+                &:nth-child(2n)
+                    +transform(-50%)
+                    .race-card-btn-and-text
+                        order: 0
+                    img[class^=race-card-character]
+                        order: 1
+                        margin-right: 2%
+
+.stage-section
+    .stage-title-main
+        +flex
+        flex-direction: column
+        margin-top: 2%
+        .stage-title
+            width: 100vw
+            text-align: center
+            +titleWithTalkingBg
+            background-image: url("../resource/bg/bg_talking_c.png")
+            +bgSizeAndRepeat
+            margin-bottom: 2%
+            font-size: $notDesktopFzL
+            +mobile
+                font-size: $notDesktopFzMS
+        .stage-small-title
+            color: $secondaryColor2
+            line-height: 140%
+            text-align: center
+            margin-bottom: 4%
+            font-size: $notDesktopFzL
+            +mobile
+                font-size: $bodyFontSize
+    .stage-card-list
+        +flex
+        flex-direction: column
+        margin-bottom: 6%
+        .stage-card
+            +flex
+            flex-direction: column-reverse
+            width: 75vw
+            margin-bottom: 6%
+            .stage-card-text
+                +flex
+                flex-direction: column
+                .stage-card-week
+                    color: $highlightColor1
+                    +mobile
+                        $notDesktopFzML
+                        margin-bottom: 4%
+                .stage-card-title
+                    color: $primaryColor1
+                    margin-bottom: 4%
+                    +mobile
+                        font-size: $notDesktopFzM
+                        margin-bottom: 6%
+                .stage-card-tag-group
+                    +flex(space-around)
+                    flex-direction: column
+                    margin-bottom: 4%
+                    .stage-card-tag
+                        color: $secondaryColor2
+                        line-height: 140%
+                        padding: 4px 24px
+                        border: 2px solid $secondaryColor2
+                        border-radius: 60px
+                        &:first-child
+                            margin-bottom: 2%
+                        +mobile
+                            font-size: $bodyFontSize
+                            &:first-child
+                                margin-bottom: 4%
+                .stage-card-btn
+                    font-size: $bodyFontSize
+                    color: $colorWhite
+                    background-color: $secondaryColor2
+                    line-height: 160%
+                    padding: 4px 24px
+                    border-radius: 60px
+                    &:active
+                        background-color: $highlightColor1
+            img[class^=week]
+                width: 25vw
+                +mobile
+                    width: 50vw
+
+.description-section
+    .description-main
+        display: none
+    .description-title
+        width: 100vw
+        text-align: center
+        +titleWithTalkingBg
+        background-image: url("../resource/bg/bg_talking_c.png")
+        +bgSizeAndRepeat
+        font-size: 30px
+        +mobile
+            font-size: $notDesktopFzM
+    .description-main.n-desktop
+        +flex
+        flex-direction: column
+        width: 100vw
+        .description-card
+            +flex
+            flex-direction: column
+            margin-bottom: 6%
+            +mobile
+                .description-card-img
+                    width: 33.333vw
+            .description-card-btn
+                display: block
+                position: relative
+                width: 20vw
+                padding-top: 100%
+                margin-bottom: 7%
+                text-align: center
+                background-image: url(../resource/btn/btn_join.png)
+                +bgSizeAndRepeat(contain, bottom)
+                +mobile
+                    width: 33.333vw
+                &:active
+                    background-image: url(../resource/btn/btn_join_h.png)
+                .description-card-btn-hand
+                    position: absolute
+                    left: 50%
+                    bottom: 40%
+                    width: 50%
+                    +transform(-50%)
+            .description-card-title
+                color: $highlightColor1
+                margin-bottom: 4%
+                +mobile
+                    $notDesktopFzML
+            .description-card-time
+                color: $colorWhite
+                background-color: $primaryColor1
+                padding: 8px 28px
+                border-radius: 50px
+                margin-bottom: 4%
+                +mobile
+                    font-size: $notDesktopFzMS
+            .description-card-text
+                color: $secondaryColor2
+                text-align: center
+                margin-bottom: 4%
+                +mobile
+                    font-size: $bodyFontSize
+            .description-card-text-small
+                font-size: $bodyFontSize
+                color: $highlightColor1
+                +mobile
+                    font-size: $bodyFontSize
+
+.award-section
+    .bg-decoration
+        display: none
+    .award-main
+        width: 100vw
+        text-align: center
+        .award-slogan
+            display: none
+        .award-slogan-div
+            display: block
+            position: relative
+            height: 100vh
+            .award-slogan
+                +flex
+                +pos(50%, auto, auto, 50%)
+                +transform(-50%, -50%,  1500%)
+                width: 100vw
+                color: $highlightColor1
+                opacity: 0
+                font-size: 35px
+                +mobile
+                    $notDesktopFzML
+        .award-title
+            width: 100vw
+            text-align: center
+            +titleWithTalkingBg
+            background-image: url("../resource/bg/bg_talking_c.png")
+            +bgSizeAndRepeat
+            margin-bottom: 10%
+            font-size: $notDesktopFzL
+            +mobile
+                font-size: $notDesktopFzM
+        .award-description
+            +flex
+            flex-direction: column
+            margin-bottom: 10%
+            .award-img
+                position: relative
+                margin-bottom: 4%
+                img
+                    width: 60vw
+                    +mobile
+                        width: 85vw
+                .award-trophy
+                    position: absolute
+                    left: -30vw
+                    transform-origin: center
+                    +transform(50%)
+                    +mobile
+                       left: -42.5vw
+                .award-light
+                    transform-origin: center center
+                    animation: rotationLight 5s linear infinite
+                    @keyframes rotationLight
+                        0%
+                            transform: rotate(0deg)
+                        100%
+                            transform: rotate(360deg)
+            .award-text
+                text-align: left
+                width: 60vw
+                +mobile
+                    width: 85vw
+                .award-text-title
+                    color: $highlightColor1
+                    line-height: 140%
+                    margin-bottom: 4%
+                    +mobile
+                        font-size: 32px
+                .award-text-content
+                    font-size: $bodyFontSize
+                    color: $primaryColor1
+                    line-height: 160%
+                    margin-bottom: 4%
+                    +mobile
+                        font-size: $bodyFontSize
+                    .award-text-highlight
+                        color: $highlightColor1
+
+.sponsor-section
+    +flex(center, flex-end)
+    .bg-decoration
+        +flex(space-around)
+        bottom: 0
+        width: 120vw
+        +transform(-50%, 20%)
+        img
+            width: 20%
+    .sponsor-main
+        .sponsor-title
+            width: 100vw
+            text-align: center
+            +titleWithTalkingBg
+            background-image: url("../resource/bg/bg_talking_c.png")
+            +bgSizeAndRepeat
+            margin-bottom: 10%
+            font-size: $notDesktopFzL
+            +mobile
+                font-size: $notDesktopFzM
+        .sponsor-card-list
+            +flex
+            flex-direction: column
+            .sponsor-card
+                +flex
+                flex-direction: column
+                margin-bottom: 6%
+                .sponsor-card-img
+                    position: relative
+                    width: 40vw
+                    height: 40vw
+                    background-image: url("../resource/btn/btn_sponsor.png")
+                    +bgSizeAndRepeat
+                    margin-bottom: 4%
+                    +mobile
+                        width: 70vw
+                        height: 70vw
+                    img
+                        width: 30vw
+                        +pos(50%, auto, auto, 50%)
+                        +transform(-50%, -50%)
+                        transition: 0.1s
+                        +mobile
+                            width: 60vw
+                    &:active
+                        background-image: url("../resource/btn/btn_sponsor_h.png")
+                        img
+                            +transform(calc( -50% + 2px), calc( -50% + 2px))
+                .sponsor-card-tag
+                    text-align: center
+                    color: $secondaryColor2
+                    line-height: 140%
+                    padding: 4px 24px
+                    border: 2px solid $secondaryColor2
+                    border-radius: 60px
+                    font-size: 25px
+                    +mobile
+                        font-size: $bodyFontSize
+
+.footer-section
+    position: relative
+    height: 100vh
+    .bg-decoration, .goal, .finish-lane
+        display: none
+    .footer-main
+        +flex
+        flex-direction: column
+        +pos(40%, auto, auto, 50%)
+        +transform(-50%, -50%)
+        .footer-join
+            +flex
+            flex-direction: column
+            width: 100vw
+            .footer-logo
+                width: 40vw
+                padding-top: 4%
+                margin-bottom: 6%
+                +mobile
+                    width: 66.666vw
+            .footer-card-btn
+                position: relative
+                width: 10vw
+                height: 10vh
+                text-align: center
+                margin-bottom: 1%
+                background-image: url(../resource/btn/btn_join.png)
+                +bgSizeAndRepeat(contain, bottom)
+                +mobile
+                    width: 20vw
+                    height: 15vh
+                &:active
+                    background-image: url(../resource/btn/btn_join_h.png)
+                .footer-card-btn-hand
+                    position: absolute
+                    width: 60%
+                    left: 50%
+                    +transform(-50%)
+            .finish-join-text
+                color: $highlightColor1
+                font-size: 35px
+                +mobile
+                    $notDesktopFzML
+
+*[data-ani = title]
+    opacity: 0
+    transform: translateY(50%)
+
+*[data-ani = fadeIn]
+    opacity: 0
+    
+*[data-ani = footerFadeIn]
+    opacity: 0
+    +transform(0%, 50%)
+    transform-origin: center center
