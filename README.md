@@ -31,15 +31,15 @@ The F2E 2022 第一關的作品，感謝有這個機會讓我能用 GSAP 實作�
 
 ## Folder Description 資料夾說明
 
-- entryDivertion : 負責剛進入畫面的階段，包括整體的初始化、 loading 頁面、游標圖示等
-- allForDesktop : 桌機端的 js / sass / css 們
-- allForNotDesktop : 平板、手機等 max-width <= 820px 裝置的 桌機端的 js / sass / css 們
-
 * resource : [EG](https://2022.thef2e.com/users/12061549261454740203) 提供的圖片、以及部分由自己拼接而成（ bg 裡的 bg_talking.png ）
 * js : JavaScript 檔案們
 * sass : sass 檔案們
 * css : sass 編譯過後的 css 檔案們
 
+* 檔案名稱：
+  - entryDivertion : 負責剛進入畫面的階段，包括整體的初始化、 loading 頁面、游標圖示等
+  - allForDesktop : 桌機端的 js / sass / css 們
+  - allForNotDesktop : 平板、手機等 max-width <= 820px 裝置的 桌機端的 js / sass / css 們
 
 
 from 2022/11/08 - 2022/11/12
