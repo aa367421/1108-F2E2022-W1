@@ -2,7 +2,7 @@
 
 
 ### **UI design from [EG](https://2022.thef2e.com/users/12061549261454740203)**
-### **UI 設計稿來自 [EG](https://2022.thef2e.com/users/12061549261454740203)
+### **UI 設計稿來自 [EG](https://2022.thef2e.com/users/12061549261454740203)**
 
 
 ## [DEMO](https://aa367421.github.io/F2E_2022_W1/index.html)（https://aa367421.github.io/F2E_2022_W1/index.html）
