@@ -132,16 +132,27 @@ const preloadImgAryInEnter = [
     './resource/btn/btn_joinHand.gif',
     './resource/character/character_f2e.gif',
     './resource/character/character_ui.gif',
-    './resource/character/character_team.gif',
-    './resource/main/map.svg',
-    './resource/main/map_now.gif', // for cover section
-]
+    './resource/character/character_team.gif', // for cover section
+];
+
+if (device == 'desktop'){
+    let ary = [
+        './resource/main/traffic_light_all.png',
+        './resource/main/traffic_light_green.png',
+        './resource/main/traffic_light_red.png',
+        './resource/main/traffic_light_yellow.png',
+        './resource/main/map.svg',
+        './resource/main/map_now.gif',
+        './resource/main/map_finish.svg',
+    ];
+    preloadImgAryInEnter.concat(ary);
+}
 
 preloadImgAryInEnter.forEach(element => {
     importData('img', element);
     document.querySelector(`link[href='${element}']`).addEventListener('load', () => {
         interactImgPreloadedNum += 1;
-        if (interactImgPreloadedNum > 8 && isInteractImgPreloaded == false){
+        if (interactImgPreloadedNum > preloadImgAryInEnter.length /2 && isInteractImgPreloaded == false){
             isInteractImgPreloaded = true;
             progressAni.pause();
             let timeLineProgressDone = gsap.timeline();
