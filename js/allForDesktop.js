@@ -8,19 +8,19 @@ const timeLineCover = gsap.timeline({
 })
 
 timeLineCover.to('.traffic-light-img', {
-    backgroundImage: 'url("../resource/main/traffic_light_red.png")'
+    backgroundImage: 'url("./resource/main/traffic_light_red.png")'
 }).to('.cover-section .bg-decoration', {
     transform: 'scale(80%)'
 },'<').to('.ready-text', {
     opacity: '0'
 },'<').to('.traffic-light-img', {
-    backgroundImage: 'url("../resource/main/traffic_light_yellow.png")'
+    backgroundImage: 'url("./resource/main/traffic_light_yellow.png")'
 }).to('.cover-section .bg-decoration', {
     transform: 'scale(60%)'
 },'<').to('.go-text', {
     opacity: '0',
 },'<').to('.traffic-light-img', {
-    backgroundImage: 'url("../resource/main/traffic_light_green.png")'
+    backgroundImage: 'url("./resource/main/traffic_light_green.png")'
 }).to('.cover-section .bg-decoration', {
     transform: 'scale(50%)',
     opacity: '0'
@@ -425,7 +425,7 @@ timeLineFooter.to('.sponsor-section', {
     top: '108px',
     left: '38px'
 },'<').to('.map',{
-    backgroundImage: 'url("../resource/main/map_finish.svg")'
+    backgroundImage: 'url("./resource/main/map_finish.svg")'
 }).to('.finish-line-l', {
     transform: 'translate(-15%, 10%) rotate(-5deg)',
     duration: 2
