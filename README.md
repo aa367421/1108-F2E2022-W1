@@ -84,5 +84,5 @@ CSS 部分，讀取完成的圓形遮罩困擾許久，後來用 CSS 的 clip-pa
 ### **[UI design from EG　UI 設計稿來自EG](https://2022.thef2e.com/users/12061549261454740203)**
 
 
-from 2022/11/08 - 2022/11/12
+from 2022/11/08 - 2022/11/13
 
