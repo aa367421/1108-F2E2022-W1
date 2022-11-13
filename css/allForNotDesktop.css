@@ -59,9 +59,16 @@ body .container > nav, body .container > div, body .container > a {
   background-position: unset;
   background-repeat: no-repeat;
 }
+@media (max-width: 414px) {
+  .side-nav .side-bar-content .side-bar-icon div {
+    width: 15vw;
+    height: 15vw;
+  }
+}
 .side-nav .side-bar-content .side-bar-icon .side-bar-text {
   color: #FFC37D;
   font-size: 18px;
+  pointer-events: none;
 }
 .side-nav .side-bar-content .side-bar-icon:active .side-bar-text {
   color: #FFE2A9;
@@ -538,6 +545,7 @@ body .container > nav, body .container > div, body .container > a {
   transform: translate(-50%, -50%) scale(100%) rotate(0deg);
   opacity: 0;
   transition: 1s;
+  pointer-events: none;
 }
 .race-title-section .race-title-main .race-card-list.n-desktop .race-card .race-card-btn-and-text .race-card-text {
   text-align: center;
@@ -745,6 +753,7 @@ body .container > nav, body .container > div, body .container > a {
   bottom: 40%;
   width: 50%;
   transform: translate(-50%, 0%) scale(100%) rotate(0deg);
+  pointer-events: none;
 }
 .description-section .description-main.n-desktop .description-card .description-card-title {
   color: #FF5136;
@@ -1074,6 +1083,7 @@ body .container > nav, body .container > div, body .container > a {
   width: 60%;
   left: 50%;
   transform: translate(-50%, 0%) scale(100%) rotate(0deg);
+  pointer-events: none;
 }
 .footer-section .footer-main .footer-join .finish-join-text {
   color: #FF5136;
